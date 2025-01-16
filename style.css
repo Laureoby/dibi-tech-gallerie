@@ -5,16 +5,18 @@
 }
 body{
     font-family: Poppins;
-    background-color: #010101;
+    /* background-color: #010101; */
+    background-color: white;
     color: #eee;
 }
 .logo img{
     width: 100%;
     height: 100%;
+    margin-left: 25%;
 }
 header{
-    width: 1200px;
-    max-width: 90%;
+    width: 100%;
+    max-width: 100%;
     margin: auto;
     display: grid;
     grid-template-columns: 50px 1fr 50px;
@@ -23,6 +25,8 @@ header{
     align-items: center;
     position: relative;
     z-index: 100;
+    background-color: white;
+    box-sizing: border-box;
 }
 header .menu{
     padding: 0;
@@ -31,12 +35,13 @@ header .menu{
     justify-content: center;
     gap: 20px;
     font-weight: 500;
+    color: #302f2f;
 }
 
 /* CSS Slider */
 .slider{
     height: 100vh;
-    margin-top: -50px;
+    margin-top: -20px;
     position: relative;
 }
 .slider .list .item{
@@ -59,7 +64,7 @@ header .menu{
     left: 0;
     bottom: 0;
     background-image: linear-gradient(
-        to top, #000 20%, transparent
+        to top, #302f2f 20%, transparent
     );
 }
 .slider .list .item .content{
@@ -102,4 +107,72 @@ header .menu{
 }
 .slider .list .item.active p:nth-child(3){
     animation-delay: 1.3s;
+}
+.arrows{
+    position: absolute;
+    top: 30%;
+    right: 50px;
+    z-index: 100;
+}
+.arrows button{
+    background-color: #eee5;
+    border: none;
+    font-family: monospace;
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    font-size: x-large;
+    color: #eee;
+    transition: .0.5s;
+}
+.arrows button:hover{
+    border-color: #eee;
+    color: #000;
+}
+.thumbnail{
+    position: absolute;
+    bottom: 50px;
+    z-index: 11;
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    height: 250px;
+    padding: 0 50px;
+    box-sizing: border-box;
+    overflow: auto;
+    justify-content: center;
+}
+.thumbnail::-webkit-scrollbar{
+    width: 0;
+}
+.thumbnail .item{
+    width: 150px;
+    height: 250px;
+    filter: brightness(.5);
+    transition: .5s;
+    flex-shrink: 0;
+}
+.thumbnail .item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.thumbnail .item.active{
+    filter: brightness(1.5);
+}
+.thumbnail .item .content{
+    position: absolute;
+    inset: auto 10px 10px 10px;
+}
+@media screen and (max-width: 678px){
+    .thumbnail{
+        justify-content: start;
+    }
+    .slider .list .item .content h2{
+        font-size: 60px;
+    }
+    .arrows{
+        top: 10%;
+    }
 }
