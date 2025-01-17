@@ -41,7 +41,7 @@ header .menu{
 /* CSS Slider */
 .slider{
     height: 100vh;
-    margin-top: -20px;
+    /* margin-top: -20px; */
     position: relative;
 }
 .slider .list .item{
@@ -132,7 +132,7 @@ header .menu{
 .thumbnail{
     position: absolute;
     bottom: 50px;
-    z-index: 11;
+    z-index: 10;
     display: flex;
     gap: 10px;
     width: 100%;
